@@ -1,0 +1,512 @@
+/* =====================================================
+   HOME PAGE
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(0, 229, 255, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(0, 100, 255, 0.08),
+            transparent 30%
+        ),
+        #05070b;
+
+    color: #ffffff;
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
+
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 22px 8%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(5, 7, 11, 0.82);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    z-index: 1000;
+}
+
+
+/* Logo */
+
+.logo {
+    font-size: 28px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #00e5ff;
+
+    text-shadow:
+        0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+
+/* Navigation links */
+
+.nav-links {
+    display: flex;
+
+    gap: 30px;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #b8bec8;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00e5ff;
+}
+
+
+/* Active link */
+
+.nav-links a.active {
+    color: #00e5ff;
+}
+
+.nav-links a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 100%;
+    height: 2px;
+
+    background: #00e5ff;
+
+    box-shadow:
+        0 0 8px rgba(0, 229, 255, 0.8);
+}
+
+
+/* =====================================================
+   HOME
+   ===================================================== */
+
+.home {
+
+    min-height: 100vh;
+
+    padding: 140px 8% 80px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 80px;
+}
+
+
+/* Home text */
+
+.home-content {
+
+    max-width: 700px;
+
+    z-index: 2;
+}
+
+
+.welcome {
+
+    color: #00e5ff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 18px;
+}
+
+
+.home h1 {
+
+    font-size: clamp(50px, 7vw, 88px);
+
+    line-height: 1.05;
+
+    font-weight: 800;
+}
+
+
+.home h1 span {
+
+    display: block;
+
+    color: #00e5ff;
+
+    text-shadow:
+        0 0 25px rgba(0, 229, 255, 0.25);
+}
+
+
+.home h2 {
+
+    margin-top: 22px;
+
+    font-size: clamp(22px, 3vw, 32px);
+
+    color: #d6d9df;
+
+    font-weight: 500;
+}
+
+
+.intro {
+
+    max-width: 650px;
+
+    margin-top: 22px;
+
+    color: #8e96a3;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+.home-buttons {
+
+    display: flex;
+
+    gap: 16px;
+
+    margin-top: 35px;
+}
+
+
+.btn {
+
+    display: inline-block;
+
+    padding: 14px 26px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+
+.btn.primary {
+
+    background: #00e5ff;
+
+    color: #020406;
+
+    box-shadow:
+        0 0 20px rgba(0, 229, 255, 0.15);
+}
+
+
+.btn.primary:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 229, 255, 0.25);
+}
+
+
+.btn.secondary {
+
+    color: #ffffff;
+
+    border: 1px solid rgba(0, 229, 255, 0.6);
+
+    background: rgba(0, 229, 255, 0.03);
+}
+
+
+.btn.secondary:hover {
+
+    color: #00e5ff;
+
+    border-color: #00e5ff;
+
+    transform: translateY(-4px);
+}
+
+
+/* =====================================================
+   TERMINAL DECORATION
+   ===================================================== */
+
+.hero-decoration {
+
+    width: 430px;
+
+    flex-shrink: 0;
+
+    perspective: 1000px;
+}
+
+
+.terminal {
+
+    width: 100%;
+
+    background: rgba(10, 15, 22, 0.9);
+
+    border: 1px solid rgba(0, 229, 255, 0.25);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 50px rgba(0, 229, 255, 0.08);
+
+    transform: rotateY(-5deg);
+
+    transition: 0.5s ease;
+}
+
+
+.terminal:hover {
+
+    transform: rotateY(0deg) translateY(-8px);
+
+    border-color: rgba(0, 229, 255, 0.5);
+
+    box-shadow:
+        0 20px 60px rgba(0, 229, 255, 0.12);
+}
+
+
+/* Terminal top */
+
+.terminal-top {
+
+    height: 42px;
+
+    padding: 0 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    background: #0d1219;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+.terminal-top span {
+
+    width: 10px;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #555;
+}
+
+
+/* Terminal body */
+
+.terminal-body {
+
+    padding: 25px;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 14px;
+
+    line-height: 2;
+}
+
+
+.symbol {
+
+    color: #00e5ff;
+
+    font-weight: bold;
+}
+
+
+.terminal-output {
+
+    color: #7d8794;
+
+    padding-left: 18px;
+}
+
+
+.online {
+
+    color: #00e5ff;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+
+    padding: 25px 8%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #59616d;
+
+    font-size: 13px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .home {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding-top: 130px;
+    }
+
+    .hero-decoration {
+
+        width: 100%;
+
+        max-width: 500px;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .navbar {
+
+        padding: 18px 5%;
+    }
+
+    .nav-links {
+
+        gap: 14px;
+    }
+
+    .nav-links a {
+
+        font-size: 12px;
+    }
+
+    .home {
+
+        padding: 120px 6% 60px;
+
+        gap: 50px;
+    }
+
+    .home h1 {
+
+        font-size: 52px;
+    }
+
+    .home h2 {
+
+        font-size: 22px;
+    }
+
+    .intro {
+
+        font-size: 16px;
+    }
+
+    .home-buttons {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    footer {
+
+        flex-direction: column;
+
+        gap: 8px;
+
+        padding: 25px 6%;
+    }
+
+}
